@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="category">
+	<insert id="createcategory" parameterType="long">
+<![CDATA[
+	INSERT INTO CATEGORY
+     VALUES (category_seq.NEXTVAL,
+             #{no},
+             '미분류',
+             SYSDATE)
+]]>
+	</insert>
+	<select id="categorylist" parameterType="string" resultType="categoryvo">
+<![CDATA[
+SELECT   c.no, c.name, c.DESCRIPTION, c.REG_DATE
+  FROM BLOG b, CATEGORY c, MEMBERS m
+  where m.NO = b.NO and b.No = c.BLOG_ID 
+  and m.ID=#{id}
+  ]]>
+	</select>
+
+</mapper>
