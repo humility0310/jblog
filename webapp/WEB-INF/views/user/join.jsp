@@ -79,13 +79,8 @@ $(function(){
 <body>
 	<div class="center-content">
 		<h1 class="logo">JBlog</h1>
-		<ul class="menu">
-			<li><a href="">로그인</a></li>
-			<li><a href="">회원가입</a></li>
-			<li><a href="">로그아웃</a></li>
-			<li><a href="">내블로그</a></li>
-		</ul>
-		<form:form class="join-form" id="join-form" method="post" action="${pageContext.request.contextPath }/joinsuccess" modelAttribute="membersVo">
+		<c:import url="/WEB-INF/views/includes/header.jsp" />
+		<form:form class="join-form" id="join-form" method="post" action="${pageContext.request.contextPath }/joinresult" modelAttribute="membersVo">
 			<label class="block-label" for="name">이름</label> 
 			<!--  input id="name" name="name" type="text" value=""-->
 				<form:input path="name" />

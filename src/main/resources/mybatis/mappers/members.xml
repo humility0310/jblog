@@ -24,4 +24,12 @@
 		 where id=#{value }		
 		]]>
 	</select>
+	
+	<select id="getByIdAndPassword" parameterType="map" resultType="membersvo">
+	<![CDATA[
+	select no, name, id
+		  from members
+		 where id=#{id } and password=#{password }
+	]]>
+	</select>
 </mapper>

@@ -4,11 +4,15 @@
 	<typeAliases>
 		<typeAlias alias="membersvo" type="com.bit2016.jblog.vo.MembersVo"/>
 		<typeAlias alias="blogvo" type="com.bit2016.jblog.vo.BlogVo"/>
+		<typeAlias alias="categoryvo" type="com.bit2016.jblog.vo.CategoryVo"/>
+		<typeAlias alias="boardvo" type="com.bit2016.jblog.vo.BoardVo"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/mappers/members.xml" />
 		<mapper resource="mybatis/mappers/blog.xml" />
+		<mapper resource="mybatis/mappers/category.xml" />
+		<mapper resource="mybatis/mappers/board.xml" />
 	</mappers>
 	
 	

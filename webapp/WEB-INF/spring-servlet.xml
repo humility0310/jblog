@@ -31,10 +31,42 @@
 		</mvc:message-converters>
 		<!-- 어노테이션 생성 설정 삭제 -->
 
+	<!-- argument resolver -->
+		<mvc:argument-resolvers>
+			<bean class="com.bit2016.security.AuthUserHandlerMethodArgumentResolver" />
+		</mvc:argument-resolvers>
+
 	</mvc:annotation-driven>
 
 	<!-- 서블릿 컨테이너의 디폴트 서블릿 위임 핸들러 -->
 	<mvc:default-servlet-handler />
+
+
+<!-- Interceptors -->
+	<mvc:interceptors>
+		<!-- <mvc:interceptor> <mvc:mapping path="/board/**" /> <bean class="com.bit2016.mysite.interceptor.MyInterceptor2" 
+			/> </mvc:interceptor> -->
+		<mvc:interceptor>
+			<mvc:mapping path="/loginresult" />
+			<bean class="com.bit2016.security.AuthLoginInterceptor" />
+		</mvc:interceptor>
+
+		<mvc:interceptor>
+			<mvc:mapping path="/logout" />
+			<bean class="com.bit2016.security.AuthLogoutInterceptor" />
+		</mvc:interceptor>
+
+
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/loginresult" />
+			<mvc:exclude-mapping path="/logout" />
+			<mvc:exclude-mapping path="/assets/**" />
+			<bean class="com.bit2016.security.AuthInterceptor" />
+		</mvc:interceptor>
+
+	</mvc:interceptors>
+
 
 	<!-- annotation 설정을 하겠다. -->
 	<context:annotation-config />

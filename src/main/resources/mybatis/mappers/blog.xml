@@ -3,7 +3,16 @@
 
 <mapper namespace="blog">
 	<insert id="createblog" parameterType="long">
+	<![CDATA[
 		INSERT INTO BLOG
-		VALUES (#{no}, 'default_Title', 'default_Content')
+		VALUES (#{no}, '블로그 제목을 입력해 주세요.', 'spring-logo.jpg')
+		]]>
 	</insert>
+<select id="viewblog" parameterType="string" resultType="blogvo">
+	<![CDATA[
+	SELECT BLOG.NO, title, logo
+  FROM BLOG, MEMBERS
+ WHERE MEMBERS.NO = BLOG.NO AND MEMBERS.ID = #{id}
+	]]>
+</select>
 </mapper>
