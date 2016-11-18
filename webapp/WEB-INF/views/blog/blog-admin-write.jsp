@@ -13,6 +13,7 @@
 	<div id="container">
 		<div id="header">
 			<h1>Spring 이야기</h1>
+			<c:import url="/WEB-INF/views/includes/blogtitle.jsp" />
 			<c:import url="/WEB-INF/views/includes/blogheader.jsp" />
 		</div>
 		<div id="wrapper">

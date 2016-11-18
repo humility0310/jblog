@@ -15,4 +15,9 @@
  WHERE MEMBERS.NO = BLOG.NO AND MEMBERS.ID = #{id}
 	]]>
 </select>
+<update id="updateblog" parameterType="blogvo">
+UPDATE BLOG
+   SET TITLE = #{title}, LOGo = #{logo}
+ WHERE no = #{blogId}
+ </update>
 </mapper>

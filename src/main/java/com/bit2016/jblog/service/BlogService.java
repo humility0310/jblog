@@ -19,4 +19,8 @@ public class BlogService {
 	public BlogVo getBlogInfo(String id) {
 		return blogDao.getBlogInfo(id);
 	}
+	
+	public void updateBlog(BlogVo vo){
+		blogDao.updateBlog(vo);
+	}
 }

@@ -19,5 +19,9 @@ public class BlogDao {
 	public BlogVo getBlogInfo(String id) {
 		return sqlSession.selectOne("blog.viewblog", id);
 	}
+	
+	public void updateBlog(BlogVo vo){
+		sqlSession.update("blog.updateblog",vo);
+	}
 
 }

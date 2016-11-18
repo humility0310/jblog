@@ -92,6 +92,13 @@ INSERT INTO BOARD
              SYSDATE);
 
 SELECT board.TITLE, board.CONTENT
-  FROM BOARD,
-       CATEGORY
-WHERE CATEGORY.NO = BOARD.CATEGORY_NO AND category.NO =4 and board.no=1;
+  FROM BOARD, CATEGORY
+ WHERE CATEGORY.NO = BOARD.CATEGORY_NO AND category.NO = 4 AND board.no = 1;
+
+UPDATE BLOG
+   SET TITLE = '바꿨다', LOGo = '로고따리고로따	'
+ WHERE no = 28;
+ 
+ select * FROM BLOG b;
+ 
+commit;

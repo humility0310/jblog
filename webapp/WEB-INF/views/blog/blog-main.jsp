@@ -28,7 +28,7 @@
 
 		<div id="extra">
 			<div class="blog-logo">
-				<img src="${pageContext.request.contextPath}/assets/images/spring-logo.jpg">
+				<c:import url="/WEB-INF/views/includes/logo.jsp" />
 			</div>
 		</div>
 

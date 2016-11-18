@@ -15,6 +15,6 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping( "/hello" )
 	public String hello(){
-		return "가나다라마바사아자차카타파222333322222가";
+		return "가나다라마바사아자차카타파22@@가";
 	}
 }

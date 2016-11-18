@@ -8,7 +8,9 @@
      VALUES (category_seq.NEXTVAL,
              #{no},
              '미분류',
-             SYSDATE)
+             '미분류된 카테고리입니다.',
+             sysdate
+             )
 ]]>
 	</insert>
 	<select id="categorylist" parameterType="string" resultType="categoryvo">
